@@ -20,8 +20,18 @@ export class BooksService
         return this.bookRepository.save(addBook);
     }
 
-    updateBook(id:number, bookDetails: updateBookParams)
+    getOneBook(id:number)
     {
-        this.bookRepository.update({id}, {...bookDetails})
+        return this.bookRepository.findBy({id});
+    }
+
+    async updateBook(id:number, bookDetails: updateBookParams)
+    {
+        await this.bookRepository.update({id}, {...bookDetails})
+    }
+
+    async deleteBook(id:number)
+    {
+        await this.bookRepository.delete({ id });
     }
 }
