@@ -10,7 +10,8 @@ export class BooksController
     @Get()
     getAllbooks()
     {
-
+        const books = this.booksService.getAllBooks();
+        return books;
     }
 
     @Post()

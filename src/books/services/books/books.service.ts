@@ -9,9 +9,9 @@ export class BooksService
 {
     constructor(@InjectRepository(Book) private bookRepository: Repository<Book>){}
 
-    getBooks()
+    getAllBooks()
     {
-
+        return this.bookRepository.find();
     }
 
     createBook(bookDetail: createBookParams)
