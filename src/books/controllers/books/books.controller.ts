@@ -31,7 +31,8 @@ export class BooksController
     updateBookById(@Param('id', ParseIntPipe) id: number, @Body() updateBookDto: UpdateBookDto)
     {
         
-        this.booksService.updateBook(id, updateBookDto);
+        return this.booksService.updateBook(id, updateBookDto);
+        //return this.booksService.getOneBook(id);
     }
 
     @Delete(':id')
