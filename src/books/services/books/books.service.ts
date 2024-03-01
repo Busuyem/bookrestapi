@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Book } from 'src/typeorm/entities/Book';
-import { createBookParams } from 'src/utils/types';
+import { createBookParams, updateBookParams } from 'src/utils/types';
 import { Repository } from 'typeorm';
 
 @Injectable()
@@ -14,9 +14,14 @@ export class BooksService
         return this.bookRepository.find();
     }
 
-    createBook(bookDetail: createBookParams)
+    createBook(bookDetails: createBookParams)
     {
-        const addBook = this.bookRepository.create({...bookDetail, createAt: new Date()});
+        const addBook = this.bookRepository.create({...bookDetails, createAt: new Date()});
         return this.bookRepository.save(addBook);
+    }
+
+    updateBook(id:number, bookDetails: updateBookParams)
+    {
+        this.bookRepository.update({id}, {...bookDetails})
     }
 }
