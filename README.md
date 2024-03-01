@@ -9,7 +9,7 @@ To test the app, follow the steps below:
   i. GET Request- get all books (Fetch all the records of books from the database) - localhost:3000/books <br>
   ii. POST Request- create book (create a book record) - localhost:3000/books -
 
-      Request params {
+      Request params: {
         name,
         detail,
         page,
@@ -19,7 +19,7 @@ To test the app, follow the steps below:
   iii. GET Request-  get a book (Fetch a book from the database by the id) - localhost:3000/books/:id <br>
   iv. PUT Request- update a book (Update book record on the database) - localhost:3000/books/:id
 
-  Request params {
+  Request params: {
         name,
         detail,
         page,
