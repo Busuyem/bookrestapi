@@ -16,5 +16,8 @@ export class Book
     page: number;
 
     @Column()
+    author: string;
+
+    @Column()
     createAt: Date;
 }
